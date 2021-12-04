@@ -14,8 +14,7 @@ ACTION_IF !VARIABLE_IS_SET ~initialise~ BEGIN
 ///////////////////////////////////////////////////////////////////////////
 // General variables, macros and functions                               //
 ///////////////////////////////////////////////////////////////////////////
-   //INCLUDE ~enhanced-powergaming-scripts/sfo/install_sfo.tpa~
-   //INCLUDE ~enhanced-powergaming-scripts/func/misc_functions.tpa~ //Block of code provided by subtledoctor
+   INCLUDE "thieving-skills-for-bards/lib/lib.tpa"
 
    //SILENT
 
