@@ -1,0 +1,240 @@
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Sets Bard Thieving Skills                                             //
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+// Move Over Required Files                                              //
+///////////////////////////////////////////////////////////////////////////
+COPY ~thieving-skills-for-bards/spl/MO#BSK01.SPL~    ~override~ // Assigns thief skill points to bards
+COPY ~thieving-skills-for-bards/lua/M_MOTHIE.lua~    ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+
+///////////////////////////////////////////////////////////////////////////
+// Create Array that Reads kitlist.2da and identifies all Bard CLAB      //
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+// Create Array that Reads kitlist.2da and identifies all Bard Kit Names //
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+// Modify All Bard CLAB Files to Assign Thief Skills Points              //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~%clab%.2DA~ override
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Set Max Skills Points in THIEFSCL.2da                                 //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~THIEFSCL.2da~ ~override~   //to allow them to put points in pick
+  SET_2DA_ENTRY_LATER ~mo_scl~ 3 39  100   // PICK_POCKETS
+  SET_2DA_ENTRY_LATER ~mo_scl~ 4 39  100   // OPEN_LOCKS
+  SET_2DA_ENTRY_LATER ~mo_scl~ 5 39  100   // FIND_TRAPS
+
+  SET_2DA_ENTRIES_NOW ~mo_scl~ 1 //look at setting immediately
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Set Standard Bard Pick Pocket Skill Progression to 0                  //
+///////////////////////////////////////////////////////////////////////////
+
+// Will want to read rows in skillbrd.2da and set all to 0. This is a non-standard size and can change with mods.
+COPY_EXISTING ~skillbrd.2da~ ~override~ //get rid of auto progression
+  SET_2DA_ENTRY_LATER ~b_pick~ 3 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 4 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 5 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 6 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 7 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 8 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 9 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 10 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 11 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 12 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 13 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 14 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 15 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 16 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 17 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 18 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 19 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 20 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 21 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 22 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 23 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 24 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 25 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 26 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 27 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 28 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 29 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 30 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 31 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 32 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 33 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 34 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 35 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 36 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 37 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 38 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 39 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 40 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 41 1  0   //
+  SET_2DA_ENTRY_LATER ~b_pick~ 42 1  0   //
+//set
+  SET_2DA_ENTRIES_NOW ~b_pick~ 1
+BUT_ONLY
+
+///////////////////////////////////////////////////////////////////////////
+// Set 1st Level Skill Bonus to 0 for Bards                              //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING ~clasiskl.2da~ ~override~ //get rid of 1st level boni
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 5  0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 39  0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 40 0   //
+  SET_2DA_ENTRY_LATER ~b_1pick~ 3 41 0   //
+//set
+  SET_2DA_ENTRIES_NOW ~b_1pick~ 1
+BUT_ONLY
+/*
+
+ACTION_FOR_EACH spell IN
+      SPELL_THRUST
+      SECRET_WORD
+      PIERCE_MAGIC
+      WARDING_WHIP
+      RUBY_RAY_OF_REVERSAL
+      PIERCE_SHIELD
+      SPELL_STRIKE
+    BEGIN
+      LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = ~WIZARD_%spell%~ RET spell_res END
+      COPY_EXISTING ~%spell_res%.SPL~ ~override~ 
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 0 STR_VAR resource = "MOSPRT" END
+    END
+
+///////////////////////////////////////////////////////////////////////////
+// Allow Blade to gain specialization                                    //
+///////////////////////////////////////////////////////////////////////////
+COPY_EXISTING weapprof.2da override
+  COUNT_2DA_COLS cols
+  SET_2DA_ENTRY_LATER weapprof 8 42  ~2~
+  SET_2DA_ENTRY_LATER weapprof 9 42  ~2~
+  SET_2DA_ENTRY_LATER weapprof 10 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 11 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 12 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 13 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 14 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 15 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 16 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 17 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 18 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 19 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 20 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 21 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 22 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 23 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 24 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 25 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 26 42 ~2~
+  SET_2DA_ENTRY_LATER weapprof 27 42 ~2~
+  SET_2DA_ENTRIES_NOW weapprof cols
+  PRETTY_PRINT_2DA
+BUT_ONLY
+
+ACTION_DEFINE_ARRAY bracers BEGIN
+  ~AGBRAC01~  // Bracelet of Wisdom (Aurora's Shoes and Boots)
+  ~ARBRAC~    // Bracers of Defense AC 2 (Region of Terror)
+  ~BRAC01~    // Bracers of Defense AC 8
+  ~BRAC02~    // Bracers of Defense AC 7
+  ~BRAC03~    // Bracers of Defense AC 6
+  ~BRAC05~    // Bracers
+  ~BRAC12~    // Bracers
+  ~BRAC13~    // Bracers of Defense AC 5
+  ~BRAC14~    // Bracers of Defense AC 4
+  ~BRAC15~    // Bracers of Defense AC 3
+  ~BRAC16~    // Bracers of the Blinding Strike
+  ~BRAC17~    // Gloves of the Burglar
+  ~BRAC18~    // Gloves of Missile Snaring
+  ~BRAC22~    // Paladin's Bracers
+  ~BRAC23~    // Blessed Bracers
+  ~BRAC24~    // Bard's Gloves
+  ~BRAC25~    // Wondrous Gloves
+  ~BRAC26~    // Bands of Focus
+  ~BRAC74~    // Gloves of ???? (KWolf)
+  ~BRACWC~    // Bracers of the Wizard Champion (Region of Terror)
+  ~C2BRAC01~  // Gloves of the Master Thief (Item Upgrade: Shadows Of Amn Item Upgrades)
+  ~CBBRACRV~  // Bracers of Revelation
+  ~CBILMATA~  // Holy Bonds of Ilmater (Check the Bodies)
+  ~CBXTLTCC~  // Blessed Bracers of Lathander (Check the Bodies)
+  ~CMTUBR02~  // Mage Gloves (The Undying)
+  ~CMTUBR03~  // Fighter's Bracers (The Undying)
+  ~DEITM102~  // Kandalmar's Bracers (Reign of Virtue (ToB))
+  ~DRAGBRCX~  // Silver Dragon Bracers
+  ~DSBRAC01~  // Otrad Atwah: 'Gloves of the Magi' (DSotSC)
+  ~DSBRAC02~  // Gift of the Woods (DSotSC)
+  ~DSBRAC03~  // Mage's Bracers (DSotSC)
+  ~DSDRGSKN~  // Dragon Skin Bracers (DSotSC)
+  ~ENTERISB~  // Kohrim's Bracers (Region of Terror)
+  ~ESLIBRA0~  // Veteran Pickpocketer's Gloves
+  ~FWBRAC01~  // Bracers of Infinite Daggers +3 (Revised Forgotten Wars Projects: Item Pack)
+  ~FWBRAC02~  // Bracers of Infinite Daggers +5 (Revised Forgotten Wars Projects: Item Pack)
+  ~FWBRAC03~  // Bracers of the Summoner (Revised Forgotten Wars Projects: Item Pack)
+  ~FWBRAC05~  // Bracers of the Sage (Revised Forgotten Wars Projects: Item Pack)
+  ~FWBRAC06~  // Gloves of Spell Speed (Revised Forgotten Wars Projects: Item Pack)
+  ~KEDL~      // Silver Bracers of Kedl (Tortured Souls)
+  ~M#GFEAT~   // Gloves of Feather Touch (Amber)
+  ~MAU011~    // The Warrior's Arm
+  ~NEWBR01~   // Bracers of Yuan-Ti (Region of Terror)
+  ~NTBRAC01~  // Gloves of Master Thievery (NTotSC)
+  ~O!BOM024~  // Laiwethel's Gloves of Extraordinary Arcane Skills (Boards of Magick item pack!)
+  ~O!BOM026~  // Colthrun's Blinding Gloves (Boards of Magick item pack!)
+  ~O!TALI09~  // Laiwethel's Gloves of Extraordinary Arcane Skills (Boards of Magick item pack!)
+  ~O#DCBRA1~  // Bracers of Defense AC +2 (Dungeon Crawl)
+  ~PITGLOVZ~  // Pit Gloves
+  ~PSBRAC01~  // Gloves of Spell Weaving (PlanarSphereMod)
+  ~QUAG~      // Gloves of Detection
+  ~RTT011~    // Bracers of Dexterity (RTT Item Pack)
+  ~RTT012~    // King Strohm's Bracers (RTT Item Pack)
+  ~RTT018~    // Bracers of the Mephit (RTT Item Pack)
+  ~RTT028~    // Gloves of Strength (RTT Item Pack)
+  ~S#BRAC03~  // Improved Gloves of Healing
+  ~SGBRAC01~  // Archmage's gloves (Munchmod)
+  ~SGBRAC03~  // Quicksilver bracers (Munchmod)
+  ~TSJBRAC~   // Tsujatha's bridal bracelet.
+  ~TZBRAC01~  // Bracers of Genius
+  ~TZBRAC02~  // Magnet Bracers
+  ~U#BRAC01~  // Mits of Shaiman (Ruad Ro'fhessa (ToB))
+  ~U#BRAC02~  // Fluent Fingers (Ruad Ro'fhessa (SoA))
+  ~UBGLOVE1~  // Gloves of Pick Pocketing (BG1UB: Shilo Chen and the Ogre-Magi)
+  
+  ~ohbbrac1~  // Enforcer Bracers
+END
+
+ACTION_IF (!comp_ir) BEGIN
+  OUTER_SPRINT $bracers(~BRAC20~) ~BRAC20~ // Gloves of Healing
+END
+
+ACTION_IF (!comp_cursed) BEGIN
+  OUTER_SPRINT $bracers(~BRAC11~) ~BRAC11~ // Bracers of Binding
+END
+
+//////////////////////////////////////////////
+//  patching
+
+ACTION_PHP_EACH bracers AS i => bracer BEGIN
+  ACTION_IF (FILE_EXISTS_IN_GAME ~%bracer%.itm~) BEGIN
+    COPY_EXISTING ~%bracer%.itm~ override
+      PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+        // make usable by kensais
+        WRITE_BYTE 0x2f (THIS BAND 0b11111011)
+        // update description
+        SPRINT text_update ~kensai_bracers~
+        LAUNCH_PATCH_MACRO ~update_item_descriptions~
+      END
+      BUT_ONLY
+  END
+END
