@@ -1,41 +1,41 @@
-/* Enhanced Powergaming Scripts
+/* Thieving Skills for Bards
  *
- * Advanced Party AI Scripts for BG: EE, BGII: EE, EET, and IWD: EE
+ * Allows Bards and Bard Kits to use Thieving Skills for BG: EE, BGII: EE, and EET
  *
  */
 
-BACKUP ~enhanced-powergaming-scripts/backup~
+BACKUP ~thieving-skills-for-bards/backup~
 AUTHOR ~morpheus562~
 
-VERSION ~v6.0~
-README ~enhanced-powergaming-scripts/readme.html~
+VERSION ~v1.0~
+README ~thieving-skills-for-bards/readme.html~
 AUTO_EVAL_STRINGS
 
 ASK_EVERY_COMPONENT
 
 ALWAYS
-	INCLUDE ~enhanced-powergaming-scripts/lib/always.tph~
+	INCLUDE ~thieving-skills-for-bards/lib/always.tph~
 
 	ACTION_DEFINE_ARRAY moreload BEGIN item_descriptions script_descriptions spell_descriptions script_dialog END
-	LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~enhanced-powergaming-scripts/languages~ reload_array = moreload END
+	LAF HANDLE_CHARSETS INT_VAR infer_charsets = 1 STR_VAR tra_path = ~thieving-skills-for-bards/languages~ reload_array = moreload END
 
 END
 
 LANGUAGE ~American English~
          ~american~
-         ~enhanced-powergaming-scripts/languages/american/setup.tra~
+         ~thieving-skills-for-bards/languages/american/setup.tra~
 
 LANGUAGE ~Polish (by Cahir)~
          ~polsh~
-         ~enhanced-powergaming-scripts/languages/polish/setup.tra~
+         ~thieving-skills-for-bards/languages/polish/setup.tra~
 
 LANGUAGE ~Russian (by Ulpian)~
          ~russian~
-         ~enhanced-powergaming-scripts/languages/russian/setup.tra~
+         ~thieving-skills-for-bards/languages/russian/setup.tra~
 
 LANGUAGE ~Spanish~
          ~spanish~
-         ~enhanced-powergaming-scripts/languages/spanish/setup.tra~
+         ~thieving-skills-for-bards/languages/spanish/setup.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -51,18 +51,18 @@ BEGIN @7 DESIGNATED 14 SUBCOMPONENT @2 LABEL EnhancedPowergamingScripts-MainNorm
 
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @3000
 
-LOAD_TRA ~enhanced-powergaming-scripts/languages/%LANGUAGE%/script_descriptions.tra~
+LOAD_TRA ~thieving-skills-for-bards/languages/%LANGUAGE%/script_descriptions.tra~
 
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-	INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/initialize.tpa~
-	INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/prebuff.tpa~
-	INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/main_component.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BG2EE/initialize.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BG2EE/prebuff.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BG2EE/main_component.tpa~
 END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN
-	INCLUDE ~enhanced-powergaming-scripts/components/BGEE/initialize.tpa~
-	INCLUDE ~enhanced-powergaming-scripts/components/BGEE/main_component.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BGEE/initialize.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BGEE/main_component.tpa~
 END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
-	INCLUDE ~enhanced-powergaming-scripts/components/IWDEE/initialize.tpa~
-	INCLUDE ~enhanced-powergaming-scripts/components/IWDEE/main_component.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/IWDEE/initialize.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/IWDEE/main_component.tpa~
 END
 
 ////////////////////////////////////////////////////
@@ -70,15 +70,15 @@ END
 BEGIN @8 DESIGNATED 15 SUBCOMPONENT @2 LABEL EnhancedPowergamingScripts-MainAccelerated
 
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-	INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/initialize.tpa~
-	INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/prebuff_a.tpa~
-	INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/main_component.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BG2EE/initialize.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BG2EE/prebuff_a.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BG2EE/main_component.tpa~
 END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN
-	INCLUDE ~enhanced-powergaming-scripts/components/BGEE/initialize.tpa~
-	INCLUDE ~enhanced-powergaming-scripts/components/BGEE/main_component_a.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BGEE/initialize.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/BGEE/main_component_a.tpa~
 END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN
-	INCLUDE ~enhanced-powergaming-scripts/components/IWDEE/initialize.tpa~
-	INCLUDE ~enhanced-powergaming-scripts/components/IWDEE/main_component_a.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/IWDEE/initialize.tpa~
+	INCLUDE ~thieving-skills-for-bards/components/IWDEE/main_component_a.tpa~
 END
 
 ///////////////////////////////////////////////////////////////////////////
@@ -89,7 +89,7 @@ BEGIN @9 DESIGNATED 9 LABEL EnhancedPowergamingScripts-Celestials
 
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3004
 
-INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/celestials.tpa~
+INCLUDE ~thieving-skills-for-bards/components/BG2EE/celestials.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Enhanced Scripts for Simulacrum - BGII: EE and EET                    //
@@ -99,7 +99,7 @@ BEGIN @10 DESIGNATED 10 LABEL EnhancedPowergamingScripts-Simulacrum
 
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet iwdee~ @3004
 
-INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/simulacrum.tpa~
+INCLUDE ~thieving-skills-for-bards/components/BG2EE/simulacrum.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -115,9 +115,9 @@ BEGIN @3 DESIGNATED 20 LABEL EnhancedPowergamingScripts-RestoreVanillaAPRWeapons
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3004
 REQUIRE_PREDICATE MOD_IS_INSTALLED ~setup-item_rev.tp2~ ~0~ @3003 
 
-LOAD_TRA ~enhanced-powergaming-scripts/languages/%LANGUAGE%/item_descriptions.tra~
+LOAD_TRA ~thieving-skills-for-bards/languages/%LANGUAGE%/item_descriptions.tra~
 
-INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/restore_apr_weapons.tpa~
+INCLUDE ~thieving-skills-for-bards/components/BG2EE/restore_apr_weapons.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Restore Vanilla Gargoyle Boots - BGII: EE and EET                     //
@@ -127,9 +127,9 @@ BEGIN @4 DESIGNATED 21 LABEL EnhancedPowergamingScripts-RestoreVanillaGargoyleBo
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3004
 REQUIRE_PREDICATE MOD_IS_INSTALLED ~setup-item_rev.tp2~ ~0~ @3003 
 
-LOAD_TRA ~enhanced-powergaming-scripts/languages/%LANGUAGE%/item_descriptions.tra~
+LOAD_TRA ~thieving-skills-for-bards/languages/%LANGUAGE%/item_descriptions.tra~
 
-INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/restore_gargoyle.tpa~
+INCLUDE ~thieving-skills-for-bards/components/BG2EE/restore_gargoyle.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Restore Vanilla Amulet of the Cheetah - BGII: EE and EET              //
@@ -139,9 +139,9 @@ BEGIN @5 DESIGNATED 22 LABEL EnhancedPowergamingScripts-RestoreVanillaAmuletChee
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3004
 REQUIRE_PREDICATE MOD_IS_INSTALLED ~setup-item_rev.tp2~ ~0~ @3003 
 
-LOAD_TRA ~enhanced-powergaming-scripts/languages/%LANGUAGE%/item_descriptions.tra~
+LOAD_TRA ~thieving-skills-for-bards/languages/%LANGUAGE%/item_descriptions.tra~
 
-INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/restore_cheetah.tpa~
+INCLUDE ~thieving-skills-for-bards/components/BG2EE/restore_cheetah.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Restore Vanilla Haste and Improved Haste - BGII: EE and EET           //
@@ -151,6 +151,6 @@ BEGIN @6 DESIGNATED 23 LABEL EnhancedPowergamingScripts-RestoreVanillaHasteIH
 REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3004
 REQUIRE_PREDICATE MOD_IS_INSTALLED ~setup-spell_rev.tp2~ ~0~ @3002
 
-LOAD_TRA ~enhanced-powergaming-scripts/languages/%LANGUAGE%/spell_descriptions.tra~
+LOAD_TRA ~thieving-skills-for-bards/languages/%LANGUAGE%/spell_descriptions.tra~
 
-INCLUDE ~enhanced-powergaming-scripts/components/BG2EE/restore_haste.tpa~
+INCLUDE ~thieving-skills-for-bards/components/BG2EE/restore_haste.tpa~
