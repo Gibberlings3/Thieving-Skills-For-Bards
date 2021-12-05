@@ -8,7 +8,7 @@
 // Move Over Required Files                                              //
 ///////////////////////////////////////////////////////////////////////////
 COPY ~thieving-skills-for-bards/spl/MO#BSK01.SPL~    ~override~ // Assigns thief skill points to bards
-COPY ~thieving-skills-for-bards/lua/M_MOTHIE.lua~    ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+COPY ~thieving-skills-for-bards/lua/M_B3THIE.lua~    ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
 ///////////////////////////////////////////////////////////////////////////
 // Modify Base Bard CLAB File to Assign Thief Skills Points              //
