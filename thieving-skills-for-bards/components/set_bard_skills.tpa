@@ -4,6 +4,12 @@
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
+//TEST TEST TEST
+APPEND ~THIEFSKL.2da~ ~BARD%TAB%25%TAB%15~ //giving them an actual progression (25 at 1st, 10 at level up)
+APPEND ~THIEFSKL.2da~ ~BLADE%TAB%15%TAB%10~ //giving them an actual progression (15 at 1st, 5 at level up)
+APPEND ~THIEFSKL.2da~ ~JESTER%TAB%25%TAB%15~ //giving them an actual progression (25 at 1st, 10 at level up)
+APPEND ~THIEFSKL.2da~ ~SKALD%TAB%10%TAB%5~ //giving them an actual progression (10 at 1st, 10 at level up)
+
 ///////////////////////////////////////////////////////////////////////////
 // Move Over Required Files                                              //
 ///////////////////////////////////////////////////////////////////////////
@@ -27,12 +33,14 @@ COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   SET_2DA_ENTRY 5 5 1 ~100~   // FIND_TRAPS
 BUT_ONLY
 
+/*
 ///////////////////////////////////////////////////////////////////////////
 // Remove 1st Level Skill Bonus for Base Bard                            //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLASISKL.2DA~ ~override~
   SET_2DA_ENTRY 3 5 1 ~0~   // PICK_POCKETS
 BUT_ONLY
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Standard Bard Pick Pocket Skill Progression to 0                  //
@@ -82,6 +90,7 @@ BUT_ONLY
     BUT_ONLY
     END
 
+/*
     // Remove 1st Level Pick Pocket Bonus from ALL Bard Kits
     INNER_ACTION BEGIN
     COPY_EXISTING ~CLASISKL.2DA~ ~override~
@@ -95,5 +104,6 @@ BUT_ONLY
       END
     BUT_ONLY
     END
+    */
   END
   END
