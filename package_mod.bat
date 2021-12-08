@@ -24,12 +24,12 @@ set audio_folder=%mod_folder%\audio
 set tispack_folder=%mod_folder%\tiz
 set tile2ee_folder=%mod_folder%\tools\tile2ee
 set iconv_folder=%mod_folder%\languages\iconv
-set mod_readme=https://github.com/Gibberlings3/Enhanced-Powergaming-Scripts/blob/main/README.md
+set mod_readme=https://github.com/Gibberlings3/Thieving-Skills-For-Bards/blob/main/README.md
 
 REM /* MODIFY: if you don't need to build a specific package, you can disable it by setting the appropriate variable below to 0 */
 set build_windows=1
-set build_osx=1
-set build_linux=1
+set build_osx=0
+set build_linux=0
 
 REM /* MODIFY: if you want to avoid making filenames lowercase, you can disable that by setting the variable below to 0 */
 set lowercase_filenames=1
