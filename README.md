@@ -8,8 +8,6 @@
 
 **Author**: [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
-**On the Web**: [Home Page](https://www.gibberlings3.net/mods/other/thieving-skills-for-bards/)
-
 ## Introduction
 
 This mod is allows Bards and Bard Kits (including those from mods) to use Pick Locks, Find/Disarm Traps, and Pick Pockets. On level up until level 20, the Bard will receive 5 skills points each in Pick Locks, Find/Disarm Traps, and Pick Pockets. The Action Bar is updated via EEex to allow Bards to Sing, Detect Traps, and Use Thieving Abilities at the loss of the quickspell.
