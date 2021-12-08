@@ -10,7 +10,7 @@
 
 ## Introduction
 
-This mod is allows Bards and Bard Kits (including those from mods) to use Pick Locks, Find/Disarm Traps, and Pick Pockets. On level up until level 20, the Bard will receive 5 skills points each in Pick Locks, Find/Disarm Traps, and Pick Pockets. The Action Bar is updated via EEex to allow Bards to Sing, Detect Traps, and Use Thieving Abilities at the loss of the quickspell.
+This mod is allows Bards and Bard Kits (including those from mods) to use Pick Locks, Find/Disarm Traps, and Pick Pockets. From level 1 up until level 20, the Bard will receive 5 skills points each in Pick Locks, Find/Disarm Traps, and Pick Pockets. The Action Bar is updated via EEex to allow Bards to Sing, Detect Traps, and Use Thieving Abilities at the loss of the quickspell.
 
 ## Compatibility
 This mod requires the EEex created by Bubbs to work. Additionally, please install this after any other mods that add Bard kits or alter bard spells/abilities. Being this requires EEex to run, Windows is required at this time.
