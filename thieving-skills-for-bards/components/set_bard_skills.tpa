@@ -40,7 +40,7 @@ BUT_ONLY
 COPY_EXISTING ~SKILLBRD.2DA~ ~override~
   COUNT_2DA_ROWS 2 rows
   FOR (index = 3 ; index < rows ; ++index) BEGIN
-    SET_2DA_ENTRY index 1 1 ~0~
+    SET_2DA_ENTRY (index + 2) 1 1 ~0~
   END
   PRETTY_PRINT_2DA
 BUT_ONLY
