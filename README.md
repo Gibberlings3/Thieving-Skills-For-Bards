@@ -8,6 +8,8 @@
 
 **Author**: [morpheus562](https://www.gibberlings3.net/profile/11591-morpheus562/)
 
+**On the Web**: [Discussion Topic](https://www.gibberlings3.net/forums/topic/33661-thieving-skills-for-bards/)
+
 ## Introduction
 
 This mod is allows Bards and Bard Kits (including those from mods) to use Pick Locks, Find/Disarm Traps, and Pick Pockets. I created this mod to give players an alternative to having to shoehorn a Thief into every party. Wizards, Bards, and Sorcerer's could all cast arcane spells, Clerics, Druids, and Shamans could all cast divine spells, and Fighters, Rangers, Paladins, Monks, and Barbarians were all physical damage; however, only Thieves had access to certain (highly important) abilities that no other class could quite perform. Yes, Knock could act as a makeshift Pick Lock costing valuable spell slots and you could bash the lock, but these options came at the expense of lost experience. Additionally, other classes could find traps, but none could disarm them. Now, you have the option to choose an alternative and change up your gameplay a little bit. 
