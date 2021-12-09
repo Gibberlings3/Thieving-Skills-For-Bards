@@ -4,10 +4,14 @@
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
+// TEST TEST TEST
+APPEND ~THIEFSKL.2da~ ~BARD%TAB%25%TAB%15~ // Bard class (Base) gets 25 skills to start then 15
+
 ///////////////////////////////////////////////////////////////////////////
 // Move Over Required Files                                              //
 ///////////////////////////////////////////////////////////////////////////
 COPY ~thieving-skills-for-bards/spl/MO#BSK01.SPL~    ~override~ // Assigns thief skill points to bards
+COPY ~thieving-skills-for-bards/spl/MO#BSK02.SPL~    ~override~ // Reduces bard traps by 100
 COPY ~thieving-skills-for-bards/lua/M_B3THIE.lua~    ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
 ///////////////////////////////////////////////////////////////////////////
@@ -15,6 +19,7 @@ COPY ~thieving-skills-for-bards/lua/M_B3THIE.lua~    ~override~ // Lua file read
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABBA01.2DA~ override
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK02 END
   PRETTY_PRINT_2DA
 BUT_ONLY
 
