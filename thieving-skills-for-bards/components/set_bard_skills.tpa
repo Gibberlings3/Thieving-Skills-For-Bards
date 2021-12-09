@@ -4,22 +4,19 @@
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
-// TEST TEST TEST
-APPEND ~THIEFSKL.2da~ ~BARD%TAB%25%TAB%15~ // Bard class (Base) gets 25 skills to start then 15
-
 ///////////////////////////////////////////////////////////////////////////
 // Move Over Required Files                                              //
 ///////////////////////////////////////////////////////////////////////////
-COPY ~thieving-skills-for-bards/spl/MO#BSK01.SPL~    ~override~ // Assigns thief skill points to bards
-COPY ~thieving-skills-for-bards/spl/MO#BSK02.SPL~    ~override~ // Reduces bard traps by 100
+COPY ~thieving-skills-for-bards/spl/MO#BSK01.SPL~    ~override~ // Assigns 5-10-10 thief skill points to bards
+COPY ~thieving-skills-for-bards/spl/MO#BSK02.SPL~    ~override~ // Assigns 5-5-5 thief skill points to bards
 COPY ~thieving-skills-for-bards/lua/M_B3THIE.lua~    ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
 ///////////////////////////////////////////////////////////////////////////
 // Modify Base Bard CLAB File to Assign Thief Skills Points              //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLABBA01.2DA~ override
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
-  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 1 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK02 END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 5 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
+  LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK02 END
   PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -30,6 +27,7 @@ COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   SET_2DA_ENTRY 3 5 1 ~100~   // PICK_POCKETS
   SET_2DA_ENTRY 4 5 1 ~100~   // OPEN_LOCKS
   SET_2DA_ENTRY 5 5 1 ~100~   // FIND_TRAPS
+  PRETTY_PRINT_2DA
 BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
@@ -44,7 +42,7 @@ BUT_ONLY
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~SKILLBRD.2DA~ ~override~
   COUNT_2DA_ROWS 2 rows
-  FOR (index = 3 ; index < rows ; ++index) BEGIN
+  FOR (index = 1 ; index < rows ; ++index) BEGIN
     SET_2DA_ENTRY (index + 2) 1 1 ~0~
   END
   PRETTY_PRINT_2DA
@@ -65,7 +63,8 @@ BUT_ONLY
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
       COPY_EXISTING ~%kit_clab%.2DA~ override
-        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 5 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
+        LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK02 END
         PRETTY_PRINT_2DA
       BUT_ONLY
       END
@@ -82,6 +81,7 @@ BUT_ONLY
         SET_2DA_ENTRY 3 (col + 1) 1 ~100~   // PICK_POCKETS
         SET_2DA_ENTRY 4 (col + 1) 1 ~100~   // OPEN_LOCKS
         SET_2DA_ENTRY 5 (col + 1) 1 ~100~   // FIND_TRAPS
+        PRETTY_PRINT_2DA
       END
       END
     BUT_ONLY
@@ -96,6 +96,7 @@ BUT_ONLY
       READ_2DA_ENTRY_FORMER clasiskl 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
         SET_2DA_ENTRY 3 (col + 1) 1 ~0~   // PICK_POCKETS
+        PRETTY_PRINT_2DA
       END
       END
     BUT_ONLY
