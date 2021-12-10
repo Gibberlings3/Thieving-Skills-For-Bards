@@ -14,11 +14,15 @@ COPY ~thieving-skills-for-bards/lua/M_B3THIE.lua~    ~override~ // Lua file read
 ///////////////////////////////////////////////////////////////////////////
 // Modify Base Bard CLAB File to Assign Thief Skills Points              //
 ///////////////////////////////////////////////////////////////////////////
+/*
 COPY_EXISTING ~CLABBA01.2DA~ override
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 1 f_MaxLevel = 5 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK01 END
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK02 END
   PRETTY_PRINT_2DA
 BUT_ONLY
+*/
+
+APPEND ~THIEFSKL.2da~ ~BARD%TAB%25%TAB%-15~ 
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Max Skills Points in THIEFSCL.2da for Base Bard                   //
