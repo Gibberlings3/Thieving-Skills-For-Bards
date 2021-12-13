@@ -17,7 +17,9 @@ This mod is allows Bards and Bard Kits (including those from mods) to use Pick L
 From level 1 up until level 20, the Bard will receive 5 skills points each in Pick Locks, Find/Disarm Traps, and Pick Pockets. The Action Bar is updated via EEex to allow Bards to Sing, Detect Traps, and Use Thieving Abilities at the loss of the quickspell.
 
 ## Compatibility
-This mod requires [EEex](https://github.com/Bubb13/EEex/releases/latest) created by Bubb to work. This means you will need to launch your game with InfinityLoader.exe instead of the standard Baldur.exe file. Additionally, please install this after any other mods that add Bard kits or alter bard spells/abilities. Being this requires EEex to run, Windows is required at this time.
+This mod requires [EEex](https://github.com/Bubb13/EEex/releases/latest) created by Bubb to work. This means you will need to launch your game with InfinityLoader.exe instead of the standard Baldur.exe file. Additionally, please install this after any other mods that add Bard kits or alter bard spells/abilities. 
+
+Being this requires EEex to run, Windows is required at this time.
 
 ## Special Thanks
 
