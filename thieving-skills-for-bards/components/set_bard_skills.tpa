@@ -11,6 +11,7 @@ COPY ~thieving-skills-for-bards/spl/MO#BSK01.SPL~    ~override~ // Assigns 5-10-
 COPY ~thieving-skills-for-bards/spl/MO#BSK02.SPL~    ~override~ // Assigns 5-5-5 thief skill points to bards
 COPY ~thieving-skills-for-bards/lua/M_B3THIE.lua~    ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
+// Remove once EEex is updated for Bard Thief Skill Natural Progression
 ///////////////////////////////////////////////////////////////////////////
 // Modify Base Bard CLAB File to Assign Thief Skills Points              //
 ///////////////////////////////////////////////////////////////////////////
@@ -19,6 +20,14 @@ COPY_EXISTING ~CLABBA01.2DA~ override
   LPF set_clab_2da_entries INT_VAR f_MinLevel = 6 f_MaxLevel = 20 f_Increment = 1 STR_VAR f_Entry = AP_MO#BSK02 END
   PRETTY_PRINT_2DA
 BUT_ONLY
+
+/* Once EEex is updated for Bard Thief Skill Natural Progression
+///////////////////////////////////////////////////////////////////////////
+// Modify THIEFSKL.2da to Allow Bards to Gain Thief Skill Progression    //
+///////////////////////////////////////////////////////////////////////////
+APPEND ~THIEFSKL.2da~ ~BARD 20 15~ // 20 Skill points at Level 1 then 15 skill points per level up
+  PRETTY_PRINT_2DA
+*/
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Max Skills Points in THIEFSCL.2da for Base Bard                   //
@@ -61,6 +70,7 @@ BUT_ONLY
   
   PATCH_IF (%kit_class% = 5) BEGIN
     // Modify Bard CLAB File to Assign Thief Skills Points Every Level
+    // Remove once EEex is updated for Bard Thief Skill Natural Progression
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
       COPY_EXISTING ~%kit_clab%.2DA~ override
@@ -70,6 +80,15 @@ BUT_ONLY
       BUT_ONLY
       END
     END
+
+    /* Once EEex is updated for Bard Thief Skill Natural Progression
+    // Modify THIEFSKL.2da to Allow Bard Kits to Gain Thief Skill Progression
+    INNER_ACTION BEGIN
+      APPEND ~THIEFSKL.2da~ ~%kit_label% 20 15~
+        PRETTY_PRINT_2DA
+    BUT_ONLY
+    END
+    */
 
     // Set Max Skills Points in THIEFSCL.2DA
     INNER_ACTION BEGIN
