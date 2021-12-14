@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-// Move Over Required Files                                              //
+// Add Required Files to Override                                        //
 ///////////////////////////////////////////////////////////////////////////
 COPY ~thieving-skills-for-bards/spl/MO#BSK01.SPL~    ~override~ // Assigns 5-10-10 thief skill points to bards
 COPY ~thieving-skills-for-bards/spl/MO#BSK02.SPL~    ~override~ // Assigns 5-5-5 thief skill points to bards
