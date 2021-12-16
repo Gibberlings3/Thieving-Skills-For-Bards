@@ -71,6 +71,7 @@ BUT_ONLY
   PATCH_IF (%kit_class% = 5) BEGIN
     // Modify Bard CLAB File to Assign Thief Skills Points Every Level
     // Remove once EEex is updated for Bard Thief Skill Natural Progression
+    // delete lib.2da too when this gets removed
     PATCH_IF FILE_EXISTS_IN_GAME ~%kit_clab%.2da~ BEGIN
       INNER_ACTION BEGIN
       COPY_EXISTING ~%kit_clab%.2DA~ override
