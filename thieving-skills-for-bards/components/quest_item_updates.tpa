@@ -12,4 +12,5 @@ COMPILE ~thieving-skills-for-bards/dlg/narlen.d~
 ///////////////////////////////////////////////////////////////////////////
 // Allow Bards to Use Potion of Perception                               //
 ///////////////////////////////////////////////////////////////////////////
-//potn39.itm
+COPY_EXISTING ~potn39.itm~ ~override~
+	WRITE_BYTE 0x1e ("%bard%" BAND "0b10111111")
