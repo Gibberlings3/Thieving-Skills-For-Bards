@@ -15,3 +15,4 @@ COMPILE ~thieving-skills-for-bards/dlg/narlen.d~
 //READ_BYTE 0x1e "bard"
 COPY_EXISTING_REGEXP GLOB ~POTN39.itm~ ~override~
 	WRITE_BYTE 0x1E (bard BAND 0b10111111)
+BUT_ONLY_IF_IT_CHANGES
