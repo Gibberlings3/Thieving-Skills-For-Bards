@@ -7,7 +7,9 @@
 ///////////////////////////////////////////////////////////////////////////
 // Narlen Darkwalk - BGEE Thieves Guild                                  //
 ///////////////////////////////////////////////////////////////////////////
-COMPILE ~thieving-skills-for-bards/dlg/narlen.d~
+ACTION_IF GAME_IS ~bgee eet~ BEGIN
+	COMPILE ~thieving-skills-for-bards/dlg/narlen.d~
+END
 
 ///////////////////////////////////////////////////////////////////////////
 // Allow Bards to Use Potions & Items                                    //
@@ -16,10 +18,12 @@ ACTION_FOR_EACH item IN
 			POTN39 // Potion of Perception
 			LEAT08 // Shadow Armor
 		BEGIN
-			COPY_EXISTING ~%item%.ITM~ ~override~ 
-				READ_BYTE 0x1E bard
-				WRITE_BYTE 0x1E (bard BAND 0b10111111)
-			BUT_ONLY_IF_IT_CHANGES
+			ACTION_IF FILE_EXISTS_IN_GAME ~%item%.ITM~ BEGIN
+				COPY_EXISTING ~%item%.ITM~ ~override~ 
+					READ_BYTE 0x1E bard
+					WRITE_BYTE 0x1E (bard BAND 0b10111111)
+				BUT_ONLY_IF_IT_CHANGES
+			END
 		END
 
 /*
