@@ -7,7 +7,7 @@
 BACKUP ~thieving-skills-for-bards/backup~
 AUTHOR ~morpheus562~
 
-VERSION ~v1.1~
+VERSION ~v1.2~
 README ~thieving-skills-for-bards/readme.html~
 AUTO_EVAL_STRINGS
 
@@ -39,4 +39,13 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~thieving-skills-for-bards/components/set_bard_skills.tpa~
-INCLUDE ~thieving-skills-for-bards/components/quest_item_updates.tpa~
+INCLUDE ~thieving-skills-for-bards/components/quests.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Update Items for Bards                                                //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @2 DESIGNATED 2 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+INCLUDE ~thieving-skills-for-bards/components/item_updates.tpa~

@@ -1,5 +1,14 @@
 ## Version 1.1
 
+January XX, 2022
+
+### Changed
+
+- Added new component to make more items usable by Bards
+- Updated bug with Narlen quest if playing BG2EE only
+
+## Version 1.1
+
 December 28, 2021
 
 ### Changed
