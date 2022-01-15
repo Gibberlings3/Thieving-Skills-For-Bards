@@ -22,8 +22,6 @@ APPEND ~THIEFSKL.2da~ ~RANGER 15 5~ // 20 Skill points at Level 1 then 15 skill 
 // Set Max Skills Points in THIEFSCL.2da for Base Ranger                 //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~THIEFSCL.2DA~ ~override~
-  SET_2DA_ENTRY 4 8 1 ~100~   // OPEN_LOCKS
-  SET_2DA_ENTRY 5 8 1 ~100~   // FIND_TRAPS
   SET_2DA_ENTRY 8 8 1 ~100~   // DETECT_ILLUSION
   PRETTY_PRINT_2DA
 BUT_ONLY
@@ -74,8 +72,6 @@ BUT_ONLY
       FOR (col = 0; col < cols - 1; ++col) BEGIN
       READ_2DA_ENTRY_FORMER thiefscl 0 col column_name
       PATCH_IF "%column_name%" STRING_EQUAL_CASE "%kit_label%" BEGIN
-        SET_2DA_ENTRY 4 (col + 1) 1 ~100~   // OPEN_LOCKS
-        SET_2DA_ENTRY 5 (col + 1) 1 ~100~   // FIND_TRAPS
         SET_2DA_ENTRY 8 (col + 1) 1 ~100~   // DETECT_ILLUSION
         PRETTY_PRINT_2DA
       END
