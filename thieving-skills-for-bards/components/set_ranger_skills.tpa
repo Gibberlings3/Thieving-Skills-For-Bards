@@ -47,8 +47,8 @@ BUT_ONLY
 // Remove 1st Level Skill Bonus for Base Ranger                          //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLASISKL.2DA~ ~override~
-  SET_2DA_ENTRY 4 8 1 ~0~   // MOVE_SILENTLY
-  SET_2DA_ENTRY 5 8 1 ~0~   // HIDE_IN_SHADOWS
+  SET_2DA_ENTRY 6 8 1 ~0~   // MOVE_SILENTLY
+  SET_2DA_ENTRY 7 8 1 ~0~   // HIDE_IN_SHADOWS
   PRETTY_PRINT_2DA
 BUT_ONLY
 
