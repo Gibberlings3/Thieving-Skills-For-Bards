@@ -10,11 +10,11 @@
 COPY ~thieving-skills-for-bards/spl/MO#BSK01.SPL~    ~override~ // Assigns 5-10-10 thief skill points to bards
 COPY ~thieving-skills-for-bards/spl/MO#BSK02.SPL~    ~override~ // Assigns 5-5-5 thief skill points to bards
 
-ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THIE1.lua~ THEN BEGIN
-  COPY ~thieving-skills-for-bards/lua/M_B3THIE1.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+ACTION_IF !FILE_EXISTS_IN_GAME ~M_B3THI1.lua~ THEN BEGIN
+  COPY ~thieving-skills-for-bards/lua/M_B3THI1.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 END
 
-COPY ~thieving-skills-for-bards/lua/M_B3THIE2.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
+COPY ~thieving-skills-for-bards/lua/M_B3THI2.lua~   ~override~ // Lua file read by EEex, provided by Bubbs and further edited by myself
 
 // Remove once EEex is updated for Bard Thief Skill Natural Progression
 ///////////////////////////////////////////////////////////////////////////
