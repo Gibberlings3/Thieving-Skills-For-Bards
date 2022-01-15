@@ -39,7 +39,17 @@ REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
 INCLUDE ~thieving-skills-for-bards/components/set_bard_skills.tpa~
-INCLUDE ~thieving-skills-for-bards/components/quests.tpa~
+INCLUDE ~thieving-skills-for-bards/components/quests_bard.tpa~
+
+///////////////////////////////////////////////////////////////////////////
+// Assign Skills to Rangers                                              //
+///////////////////////////////////////////////////////////////////////////
+BEGIN @3 DESIGNATED 3 
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
+
+INCLUDE ~thieving-skills-for-bards/components/set_ranger_skills.tpa~
+//INCLUDE ~thieving-skills-for-bards/components/quests_ranger.tpa~
 
 ///////////////////////////////////////////////////////////////////////////
 // Update Items for Bards                                                //
@@ -48,4 +58,4 @@ BEGIN @2 DESIGNATED 2
 REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @3000
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ @3002 //EEX required!
 
-INCLUDE ~thieving-skills-for-bards/components/item_updates.tpa~
+INCLUDE ~thieving-skills-for-bards/components/item_updates_bard.tpa~
