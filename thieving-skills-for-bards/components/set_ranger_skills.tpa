@@ -38,8 +38,8 @@ APPEND ~THIEFSKL.2da~ ~RANGER 20 15~ // 20 Skill points at Level 1 then 15 skill
 // Set Max Skills Points in THIEFSCL.2da for Base Ranger                 //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~THIEFSCL.2DA~ ~override~
-  SET_2DA_ENTRY 4 5 8 ~100~   // OPEN_LOCKS
-  SET_2DA_ENTRY 5 5 8 ~100~   // FIND_TRAPS
+  SET_2DA_ENTRY 4 8 1 ~100~   // OPEN_LOCKS
+  SET_2DA_ENTRY 5 8 1 ~100~   // FIND_TRAPS
   PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -47,8 +47,8 @@ BUT_ONLY
 // Remove 1st Level Skill Bonus for Base Ranger                          //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLASISKL.2DA~ ~override~
-  SET_2DA_ENTRY 3 8 4 ~0~   // MOVE_SILENTLY
-  SET_2DA_ENTRY 3 8 5 ~0~   // HIDE_IN_SHADOWS
+  SET_2DA_ENTRY 4 8 1 ~0~   // MOVE_SILENTLY
+  SET_2DA_ENTRY 5 8 1 ~0~   // HIDE_IN_SHADOWS
   PRETTY_PRINT_2DA
 BUT_ONLY
 
