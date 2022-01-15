@@ -31,8 +31,8 @@ BUT_ONLY
 ///////////////////////////////////////////////////////////////////////////
 // Modify THIEFSKL.2da to Allow Rangers to Gain Thief Skill Progression    //
 ///////////////////////////////////////////////////////////////////////////
-APPEND ~THIEFSKL.2da~ ~Ranger 20 15~ // 20 Skill points at Level 1 then 15 skill points per level up
-  PRETTY_PRINT_2DA
+APPEND ~THIEFSKL.2da~ ~RANGER 20 15~ // 20 Skill points at Level 1 then 15 skill points per level up
+  //PRETTY_PRINT_2DA
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Max Skills Points in THIEFSCL.2da for Base Ranger                 //
