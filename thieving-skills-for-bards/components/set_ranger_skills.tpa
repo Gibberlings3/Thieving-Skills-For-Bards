@@ -17,7 +17,6 @@ COPY ~thieving-skills-for-bards/lua/M_B3THI3.lua~   ~override~ // Lua file read 
 ///////////////////////////////////////////////////////////////////////////
 APPEND ~THIEFSKL.2da~ ~RANGER 15 5~         // 20 Skill points at Level 1 then 15 skill points per level up
 APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 20 Skill points at Level 1 then 15 skill points per level up
-  //PRETTY_PRINT_2DA
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Max Skills Points in THIEFSCL.2da for Base Ranger                 //
