@@ -19,7 +19,7 @@ APPEND ~THIEFSKL.2da~ ~RANGER 15 5~         // 15 Skill points at Level 1 then 2
 APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 15 Skill points at Level 1 then 20 skill points per level up
 
 ///////////////////////////////////////////////////////////////////////////
-// Set Max Skills Points in THIEFSCL.2da for Base Ranger                 //
+// Set Max Skills Points in THIEFSCL.2da for Ranger and Cleric/Ranger    //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   SET_2DA_ENTRY 8 8 1 ~100~   // DETECT_ILLUSION
@@ -28,7 +28,7 @@ COPY_EXISTING ~THIEFSCL.2DA~ ~override~
 BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
-// Remove 1st Level Skill Bonus for Base Ranger                          //
+// Remove 1st Level Skill Bonus for Ranger and Cleric/Ranger             //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLASISKL.2DA~ ~override~
   SET_2DA_ENTRY 6 8 1 ~0~    // MOVE_SILENTLY
@@ -39,7 +39,7 @@ COPY_EXISTING ~CLASISKL.2DA~ ~override~
 BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
-// Set Standard Ranger Move Silently to 0                                //
+// Set Ranger and Cleric/Ranger Move Silently to 0                       //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~SKILLRNG.2DA~ ~override~
   COUNT_2DA_ROWS 2 rows
@@ -50,7 +50,7 @@ COPY_EXISTING ~SKILLRNG.2DA~ ~override~
 BUT_ONLY
 
 ///////////////////////////////////////////////////////////////////////////
-// Set Skills for ALL Bard Kits                                          //
+// Set Skills for ALL Ranger Kits                                        //
 ///////////////////////////////////////////////////////////////////////////
  COPY_EXISTING ~KITLIST.2DA~ ~override~
   READ_2DA_ENTRIES_NOW ~ranger_kitlist~ 10
