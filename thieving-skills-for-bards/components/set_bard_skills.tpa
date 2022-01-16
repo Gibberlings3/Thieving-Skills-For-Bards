@@ -31,7 +31,6 @@ BUT_ONLY
 // Modify THIEFSKL.2da to Allow Bards to Gain Thief Skill Progression    //
 ///////////////////////////////////////////////////////////////////////////
 APPEND ~THIEFSKL.2da~ ~BARD 20 15~ // 20 Skill points at Level 1 then 15 skill points per level up
-  PRETTY_PRINT_2DA
 */
 
 ///////////////////////////////////////////////////////////////////////////
@@ -91,7 +90,6 @@ BUT_ONLY
     // Modify THIEFSKL.2da to Allow Bard Kits to Gain Thief Skill Progression
     INNER_ACTION BEGIN
       APPEND ~THIEFSKL.2da~ ~%kit_label% 20 15~
-        PRETTY_PRINT_2DA
     BUT_ONLY
     END
     */
