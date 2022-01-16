@@ -15,8 +15,8 @@ COPY ~thieving-skills-for-bards/lua/M_B3THI3.lua~   ~override~ // Lua file read 
 ///////////////////////////////////////////////////////////////////////////
 // Modify THIEFSKL.2da to Allow Rangers to Gain Thief Skill Progression    //
 ///////////////////////////////////////////////////////////////////////////
-APPEND ~THIEFSKL.2da~ ~RANGER 15 5~         // 20 Skill points at Level 1 then 15 skill points per level up
-APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 20 Skill points at Level 1 then 15 skill points per level up
+APPEND ~THIEFSKL.2da~ ~RANGER 15 5~         // 15 Skill points at Level 1 then 20 skill points per level up
+APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 15 Skill points at Level 1 then 20 skill points per level up
 
 ///////////////////////////////////////////////////////////////////////////
 // Set Max Skills Points in THIEFSCL.2da for Base Ranger                 //
