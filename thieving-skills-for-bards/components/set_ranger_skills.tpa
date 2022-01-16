@@ -15,7 +15,8 @@ COPY ~thieving-skills-for-bards/lua/M_B3THI3.lua~   ~override~ // Lua file read 
 ///////////////////////////////////////////////////////////////////////////
 // Modify THIEFSKL.2da to Allow Rangers to Gain Thief Skill Progression    //
 ///////////////////////////////////////////////////////////////////////////
-APPEND ~THIEFSKL.2da~ ~RANGER 15 5~ // 20 Skill points at Level 1 then 15 skill points per level up
+APPEND ~THIEFSKL.2da~ ~RANGER 15 5~         // 20 Skill points at Level 1 then 15 skill points per level up
+APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER 15 5~  // 20 Skill points at Level 1 then 15 skill points per level up
   //PRETTY_PRINT_2DA
 
 ///////////////////////////////////////////////////////////////////////////
@@ -23,6 +24,7 @@ APPEND ~THIEFSKL.2da~ ~RANGER 15 5~ // 20 Skill points at Level 1 then 15 skill 
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~THIEFSCL.2DA~ ~override~
   SET_2DA_ENTRY 8 8 1 ~100~   // DETECT_ILLUSION
+  SET_2DA_ENTRY 8 18 1 ~100~  // DETECT_ILLUSION
   PRETTY_PRINT_2DA
 BUT_ONLY
 
@@ -30,8 +32,10 @@ BUT_ONLY
 // Remove 1st Level Skill Bonus for Base Ranger                          //
 ///////////////////////////////////////////////////////////////////////////
 COPY_EXISTING ~CLASISKL.2DA~ ~override~
-  SET_2DA_ENTRY 6 8 1 ~0~   // MOVE_SILENTLY
-  SET_2DA_ENTRY 7 8 1 ~0~   // HIDE_IN_SHADOWS
+  SET_2DA_ENTRY 6 8 1 ~0~    // MOVE_SILENTLY
+  SET_2DA_ENTRY 7 8 1 ~0~    // HIDE_IN_SHADOWS
+  SET_2DA_ENTRY 6 18 1 ~0~   // MOVE_SILENTLY
+  SET_2DA_ENTRY 7 18 1 ~0~   // HIDE_IN_SHADOWS
   PRETTY_PRINT_2DA
 BUT_ONLY
 
