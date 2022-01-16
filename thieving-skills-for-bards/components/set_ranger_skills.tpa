@@ -59,7 +59,7 @@ BUT_ONLY
   READ_2DA_ENTRY_FORMER ~ranger_kitlist~ row 1 kit_label
   READ_2DA_ENTRY_FORMER ~ranger_kitlist~ row 8 kit_class
 
-  PATCH_IF (%kit_class% = 12) BEGIN
+  PATCH_IF (%kit_class% = 12 || %kit_class% = 18) BEGIN
   
     // Modify THIEFSKL.2da to Allow Ranger Kits to Gain Thief Skill Progression
     INNER_ACTION BEGIN
