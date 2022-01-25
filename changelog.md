@@ -1,3 +1,11 @@
+## Version 1.3
+
+January 25, 2022
+
+### Changed
+
+- Added compatibility with IWD: EE
+
 ## Version 1.2
 
 January 3, 2022
