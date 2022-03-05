@@ -4,7 +4,8 @@ January 25, 2022
 
 ### Changed
 
-- Added compatibility with IWD: EE
+- Added compatibility with IWD: EE.
+- Added French translation courtesy of JohnBob.
 
 ## Version 1.2
 
@@ -12,8 +13,8 @@ January 3, 2022
 
 ### Changed
 
-- Added new component to make more items usable by Bards
-- Updated bug with Narlen quest if playing BG2EE only
+- Added new component to make more items usable by Bards.
+- Updated bug with Narlen quest if playing BG2EE only.
 
 ## Version 1.1
 

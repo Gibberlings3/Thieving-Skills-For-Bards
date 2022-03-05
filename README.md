@@ -1,7 +1,7 @@
 # Thieving-Skills-For-Bards
 
 [![Latest Release](https://img.shields.io/github/v/release/gibberlings3/Thieving-Skills-For-Bards?include_prereleases)](https://github.com/Gibberlings3/Thieving-Skills-For-Bards/releases/latest)
-![Language](https://img.shields.io/static/v1?label=language&message=english&color=informational)
+![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20french&color=informational)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows&color=informational)
 
 [A Gibberlings Three Mod](https://www.gibberlings3.net/)
@@ -11,6 +11,8 @@
 **On the Web**: [Discussion Topic](https://www.gibberlings3.net/forums/topic/33661-thieving-skills-for-bards/)
 
 ## Introduction
+
+**PLEASE NOTE: This mod is being depricated and replaced with my [Skills and Abilities](https://github.com/Gibberlings3/Skills-and-Abilities) mod.**
 
 This mod allows Bards and Bard Kits (including those from mods) to use Pick Locks, Find/Disarm Traps, and Pick Pockets in Baldur's Gate: Enhanced Edition, Baldur's Gate II: Enhanced Edition, the Enhanced Edition Trilogy. I created this mod to give players an alternative to having to shoehorn a Thief into every party. Most classes can cover down on similar/shared abilities, but only Thieves had access to certain (highly important) abilities that no other class could quite perform: pick locks and disarm traps. Yes, Knock could act as a makeshift Pick Lock costing valuable spell slots and you could bash the lock, but these options came at the expense of lost experience. Now, you have the option to choose an alternative to Thieves and change up your gameplay a little bit. 
 

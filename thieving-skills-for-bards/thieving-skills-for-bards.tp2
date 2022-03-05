@@ -24,6 +24,9 @@ END
 LANGUAGE ~American English~
          ~american~
          ~thieving-skills-for-bards/languages/american/setup.tra~
+LANGUAGE ~French~
+         ~french~
+         ~thieving-skills-for-bards/languages/french/setup.tra~
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
