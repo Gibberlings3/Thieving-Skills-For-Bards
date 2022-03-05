@@ -12,7 +12,7 @@
 
 ## Introduction
 
-**PLEASE NOTE: This mod is being depricated and replaced with my [Skills and Abilities](https://github.com/Gibberlings3/Skills-and-Abilities) mod.**
+**PLEASE NOTE: This mod is being deprecated and replaced with my [Skills and Abilities](https://github.com/Gibberlings3/Skills-and-Abilities) mod.**
 
 This mod allows Bards and Bard Kits (including those from mods) to use Pick Locks, Find/Disarm Traps, and Pick Pockets in Baldur's Gate: Enhanced Edition, Baldur's Gate II: Enhanced Edition, the Enhanced Edition Trilogy. I created this mod to give players an alternative to having to shoehorn a Thief into every party. Most classes can cover down on similar/shared abilities, but only Thieves had access to certain (highly important) abilities that no other class could quite perform: pick locks and disarm traps. Yes, Knock could act as a makeshift Pick Lock costing valuable spell slots and you could bash the lock, but these options came at the expense of lost experience. Now, you have the option to choose an alternative to Thieves and change up your gameplay a little bit. 
 
