@@ -1,3 +1,11 @@
+## Version 1.3.2
+
+March 4, 2022
+
+### Changed
+
+- Aligning version numbers for Project Infinity (issues on my end). 
+
 ## Version 1.3
 
 March 4, 2022
