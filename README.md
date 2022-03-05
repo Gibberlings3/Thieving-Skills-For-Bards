@@ -27,3 +27,4 @@ Being this requires EEex to run, Windows is required at this time.
 
 - Bubb for all of his work on EEex as well as providing the .lua file required to alter the actionbar.
 - aVENGER for use of a function to update clab files.
+- JohnBob for the French translation.
